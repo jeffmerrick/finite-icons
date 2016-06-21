@@ -1,0 +1,2471 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Finite Icons Preview</title>
+
+    <style>
+      /* Page Styles */
+
+      * {
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        background: #fff;
+        color: #444;
+        font: 16px/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
+      }
+
+      a,
+      a:visited {
+        color: #888;
+        text-decoration: underline;
+      }
+      a:hover,
+      a:focus { color: #000; }
+
+      header {
+        border-bottom: 1px solid #ddd;
+        margin-bottom: 20px;
+        overflow: hidden;
+        padding: 20px 0;
+      }
+
+      header h1 {
+        color: #000;
+        float: left;
+        font-size: 36px;
+      }
+
+      header a {
+        float: right;
+        font-size: 14px;
+      }
+
+      .container {
+        margin: 0 auto;
+        max-width: 1200px;
+        min-width: 960px;
+        padding: 0 40px;
+        width: 90%;
+      }
+
+      .glyphs {
+        display:flex;
+        flex-direction:row;
+        flex-wrap:wrap;
+      }
+
+      .glyph {
+        position:relative;
+        padding: 10px 0 15px;
+        margin-bottom: 15px;
+        width:33.33%;
+      }
+
+      .glyph:hover .usage {
+        opacity:1;
+      }
+
+      .preview-glyphs { vertical-align: bottom; }
+
+      .preview-scale {
+        color: #888;
+        font-size: 12px;
+        margin-top: 5px;
+      }
+
+      .name {
+        font-size:16px;
+      }
+
+      .step {
+        display: inline-block;
+        line-height: 1;
+        position: relative;
+        margin-right:15px;
+      }
+
+      .step .letters,
+      .step i {
+        -webkit-transition: opacity .3s;
+        -moz-transition: opacity .3s;
+        -ms-transition: opacity .3s;
+        -o-transition: opacity .3s;
+        transition: opacity .3s;
+      }
+
+      .step:hover .letters { opacity: 1; }
+      .step:hover i { opacity: .3; }
+
+      .letters {
+        opacity: .3;
+        position: absolute;
+      }
+
+      
+      .size-32 { font-size: 32px; }
+      
+
+      .usage { 
+        position:absolute;
+        top:6px;
+        opacity:0;       
+        padding:0 15px 0 40px;
+      }
+
+      .usage input {
+        font-family: monospace;
+        margin-right: 3px;
+        padding: 2px 5px;
+        text-align: center;
+        float:left;
+      }
+
+      .usage .point { width: 100%; }
+
+      .usage .class { width: 100%; }
+
+      footer {
+        color: #888;
+        font-size: 11px;
+        padding: 20px 0;
+      }
+
+      /* Icon Font: finite-icons */
+
+      @font-face {
+  font-family: "finite-icons";
+  src: url("./finite-icons.eot");
+  src: url("./finite-icons.eot?#iefix") format("embedded-opentype"),
+       url("./finite-icons.woff") format("woff"),
+       url("./finite-icons.ttf") format("truetype"),
+       url("./finite-icons.svg#finite-icons") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "finite-icons";
+    src: url("./finite-icons.svg#finite-icons") format("svg");
+  }
+}
+
+      [data-icon]:before { content: attr(data-icon); }
+
+      [data-icon]:before,
+      .fi-airplane:before,
+.fi-alert-circle:before,
+.fi-align-center:before,
+.fi-align-justify:before,
+.fi-align-left:before,
+.fi-align-right:before,
+.fi-arrow-e:before,
+.fi-arrow-expand:before,
+.fi-arrow-n:before,
+.fi-arrow-ne:before,
+.fi-arrow-nw:before,
+.fi-arrow-resize-h:before,
+.fi-arrow-resize-v:before,
+.fi-arrow-s:before,
+.fi-arrow-se:before,
+.fi-arrow-sw:before,
+.fi-arrow-w:before,
+.fi-astronaut:before,
+.fi-ban:before,
+.fi-bell:before,
+.fi-bill-dollar:before,
+.fi-bold:before,
+.fi-book:before,
+.fi-bookmark:before,
+.fi-brightness-down:before,
+.fi-brightness-up:before,
+.fi-bulb:before,
+.fi-bus:before,
+.fi-cabinet:before,
+.fi-calendar-month:before,
+.fi-calendar-year:before,
+.fi-camera:before,
+.fi-car:before,
+.fi-caret-down:before,
+.fi-caret-left:before,
+.fi-caret-right:before,
+.fi-caret-up:before,
+.fi-cart:before,
+.fi-chart-bar:before,
+.fi-chart-line:before,
+.fi-chart-pie:before,
+.fi-chat:before,
+.fi-check:before,
+.fi-check-box:before,
+.fi-chevron-down:before,
+.fi-chevron-left:before,
+.fi-chevron-right:before,
+.fi-chevron-up:before,
+.fi-clipboard:before,
+.fi-clock:before,
+.fi-cloud:before,
+.fi-cloud-download:before,
+.fi-cloud-upload:before,
+.fi-code:before,
+.fi-cog:before,
+.fi-coin:before,
+.fi-compass:before,
+.fi-conversation:before,
+.fi-copy:before,
+.fi-credit-card:before,
+.fi-desktop:before,
+.fi-document:before,
+.fi-document-stack:before,
+.fi-envelope:before,
+.fi-envelope-open:before,
+.fi-external:before,
+.fi-eye:before,
+.fi-eye-hide:before,
+.fi-facebook:before,
+.fi-feed:before,
+.fi-film:before,
+.fi-fire:before,
+.fi-flag:before,
+.fi-flask:before,
+.fi-folder:before,
+.fi-folder-archive:before,
+.fi-font:before,
+.fi-frown:before,
+.fi-gauge:before,
+.fi-github:before,
+.fi-globe:before,
+.fi-globe-alt:before,
+.fi-google:before,
+.fi-grid-4:before,
+.fi-grid-9:before,
+.fi-heading:before,
+.fi-heart:before,
+.fi-heart-filled:before,
+.fi-help:before,
+.fi-home:before,
+.fi-image:before,
+.fi-image-gallery:before,
+.fi-inbox:before,
+.fi-indent:before,
+.fi-info-circle:before,
+.fi-instagram:before,
+.fi-italic:before,
+.fi-key:before,
+.fi-keyboard:before,
+.fi-laptop:before,
+.fi-lightning:before,
+.fi-link:before,
+.fi-link-broken:before,
+.fi-linkedin:before,
+.fi-list-ol:before,
+.fi-list-ul:before,
+.fi-lock:before,
+.fi-lock-open:before,
+.fi-logout:before,
+.fi-map:before,
+.fi-marker:before,
+.fi-megaphone:before,
+.fi-menu:before,
+.fi-minus:before,
+.fi-mobile:before,
+.fi-mouse:before,
+.fi-network:before,
+.fi-outdent:before,
+.fi-paperclip:before,
+.fi-paste:before,
+.fi-pencil:before,
+.fi-pencil-box:before,
+.fi-phone:before,
+.fi-pin:before,
+.fi-planet:before,
+.fi-player-backward:before,
+.fi-player-forward:before,
+.fi-player-mute:before,
+.fi-player-pause:before,
+.fi-player-play:before,
+.fi-player-skip-backward:before,
+.fi-player-skip-forward:before,
+.fi-player-stop:before,
+.fi-player-volume-down:before,
+.fi-player-volume-off:before,
+.fi-player-volume-up:before,
+.fi-plus:before,
+.fi-pointer:before,
+.fi-printer:before,
+.fi-question-circle:before,
+.fi-reddit:before,
+.fi-redo:before,
+.fi-refresh:before,
+.fi-robot:before,
+.fi-rocket:before,
+.fi-save:before,
+.fi-scissors:before,
+.fi-search:before,
+.fi-server:before,
+.fi-share:before,
+.fi-shield:before,
+.fi-smile:before,
+.fi-star:before,
+.fi-star-filled:before,
+.fi-strikethrough:before,
+.fi-table:before,
+.fi-tablet:before,
+.fi-tag:before,
+.fi-target:before,
+.fi-terminal:before,
+.fi-times:before,
+.fi-train:before,
+.fi-trash:before,
+.fi-tumblr:before,
+.fi-twitter:before,
+.fi-underline:before,
+.fi-undo:before,
+.fi-user:before,
+.fi-users:before,
+.fi-video:before,
+.fi-water:before,
+.fi-wifi:before,
+.fi-window:before,
+.fi-wrench:before,
+.fi-youtube:before {
+        display: inline-block;
+  font-family: "finite-icons";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  line-height: 1;
+  text-decoration: inherit;
+  text-rendering: optimizeLegibility;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+      }
+
+      .fi-airplane:before { content: "\f1af"; }
+.fi-alert-circle:before { content: "\f1b0"; }
+.fi-align-center:before { content: "\f1b1"; }
+.fi-align-justify:before { content: "\f1b2"; }
+.fi-align-left:before { content: "\f1b3"; }
+.fi-align-right:before { content: "\f1b4"; }
+.fi-arrow-e:before { content: "\f1b5"; }
+.fi-arrow-expand:before { content: "\f1b6"; }
+.fi-arrow-n:before { content: "\f1b7"; }
+.fi-arrow-ne:before { content: "\f1b8"; }
+.fi-arrow-nw:before { content: "\f1b9"; }
+.fi-arrow-resize-h:before { content: "\f1ba"; }
+.fi-arrow-resize-v:before { content: "\f1bb"; }
+.fi-arrow-s:before { content: "\f1bc"; }
+.fi-arrow-se:before { content: "\f1bd"; }
+.fi-arrow-sw:before { content: "\f1be"; }
+.fi-arrow-w:before { content: "\f1bf"; }
+.fi-astronaut:before { content: "\f1c0"; }
+.fi-ban:before { content: "\f1c1"; }
+.fi-bell:before { content: "\f1c2"; }
+.fi-bill-dollar:before { content: "\f1c3"; }
+.fi-bold:before { content: "\f1c4"; }
+.fi-book:before { content: "\f1c5"; }
+.fi-bookmark:before { content: "\f1c6"; }
+.fi-brightness-down:before { content: "\f1c7"; }
+.fi-brightness-up:before { content: "\f1c8"; }
+.fi-bulb:before { content: "\f1c9"; }
+.fi-bus:before { content: "\f1ca"; }
+.fi-cabinet:before { content: "\f1cb"; }
+.fi-calendar-month:before { content: "\f1cc"; }
+.fi-calendar-year:before { content: "\f1cd"; }
+.fi-camera:before { content: "\f1ce"; }
+.fi-car:before { content: "\f1cf"; }
+.fi-caret-down:before { content: "\f1d0"; }
+.fi-caret-left:before { content: "\f1d1"; }
+.fi-caret-right:before { content: "\f1d2"; }
+.fi-caret-up:before { content: "\f1d3"; }
+.fi-cart:before { content: "\f1d4"; }
+.fi-chart-bar:before { content: "\f1d5"; }
+.fi-chart-line:before { content: "\f1d6"; }
+.fi-chart-pie:before { content: "\f1d7"; }
+.fi-chat:before { content: "\f1d8"; }
+.fi-check:before { content: "\f1d9"; }
+.fi-check-box:before { content: "\f1da"; }
+.fi-chevron-down:before { content: "\f1db"; }
+.fi-chevron-left:before { content: "\f1dc"; }
+.fi-chevron-right:before { content: "\f1dd"; }
+.fi-chevron-up:before { content: "\f1de"; }
+.fi-clipboard:before { content: "\f1df"; }
+.fi-clock:before { content: "\f1e0"; }
+.fi-cloud:before { content: "\f1e1"; }
+.fi-cloud-download:before { content: "\f1e2"; }
+.fi-cloud-upload:before { content: "\f1e3"; }
+.fi-code:before { content: "\f1e4"; }
+.fi-cog:before { content: "\f1e5"; }
+.fi-coin:before { content: "\f1e6"; }
+.fi-compass:before { content: "\f1e7"; }
+.fi-conversation:before { content: "\f1e8"; }
+.fi-copy:before { content: "\f1e9"; }
+.fi-credit-card:before { content: "\f1ea"; }
+.fi-desktop:before { content: "\f1eb"; }
+.fi-document:before { content: "\f1ec"; }
+.fi-document-stack:before { content: "\f1ed"; }
+.fi-envelope:before { content: "\f1ee"; }
+.fi-envelope-open:before { content: "\f1ef"; }
+.fi-external:before { content: "\f1f0"; }
+.fi-eye:before { content: "\f1f1"; }
+.fi-eye-hide:before { content: "\f1f2"; }
+.fi-facebook:before { content: "\f1f3"; }
+.fi-feed:before { content: "\f1f4"; }
+.fi-film:before { content: "\f1f5"; }
+.fi-fire:before { content: "\f1f6"; }
+.fi-flag:before { content: "\f1f7"; }
+.fi-flask:before { content: "\f1f8"; }
+.fi-folder:before { content: "\f1f9"; }
+.fi-folder-archive:before { content: "\f1fa"; }
+.fi-font:before { content: "\f1fb"; }
+.fi-frown:before { content: "\f1fc"; }
+.fi-gauge:before { content: "\f1fd"; }
+.fi-github:before { content: "\f1fe"; }
+.fi-globe:before { content: "\f1ff"; }
+.fi-globe-alt:before { content: "\f200"; }
+.fi-google:before { content: "\f201"; }
+.fi-grid-4:before { content: "\f202"; }
+.fi-grid-9:before { content: "\f203"; }
+.fi-heading:before { content: "\f204"; }
+.fi-heart:before { content: "\f205"; }
+.fi-heart-filled:before { content: "\f206"; }
+.fi-help:before { content: "\f207"; }
+.fi-home:before { content: "\f208"; }
+.fi-image:before { content: "\f209"; }
+.fi-image-gallery:before { content: "\f20a"; }
+.fi-inbox:before { content: "\f20b"; }
+.fi-indent:before { content: "\f20c"; }
+.fi-info-circle:before { content: "\f20d"; }
+.fi-instagram:before { content: "\f20e"; }
+.fi-italic:before { content: "\f20f"; }
+.fi-key:before { content: "\f210"; }
+.fi-keyboard:before { content: "\f211"; }
+.fi-laptop:before { content: "\f212"; }
+.fi-lightning:before { content: "\f213"; }
+.fi-link:before { content: "\f214"; }
+.fi-link-broken:before { content: "\f215"; }
+.fi-linkedin:before { content: "\f216"; }
+.fi-list-ol:before { content: "\f217"; }
+.fi-list-ul:before { content: "\f218"; }
+.fi-lock:before { content: "\f219"; }
+.fi-lock-open:before { content: "\f21a"; }
+.fi-logout:before { content: "\f21b"; }
+.fi-map:before { content: "\f21c"; }
+.fi-marker:before { content: "\f21d"; }
+.fi-megaphone:before { content: "\f21e"; }
+.fi-menu:before { content: "\f21f"; }
+.fi-minus:before { content: "\f220"; }
+.fi-mobile:before { content: "\f221"; }
+.fi-mouse:before { content: "\f222"; }
+.fi-network:before { content: "\f223"; }
+.fi-outdent:before { content: "\f224"; }
+.fi-paperclip:before { content: "\f225"; }
+.fi-paste:before { content: "\f226"; }
+.fi-pencil:before { content: "\f227"; }
+.fi-pencil-box:before { content: "\f228"; }
+.fi-phone:before { content: "\f229"; }
+.fi-pin:before { content: "\f22a"; }
+.fi-planet:before { content: "\f22b"; }
+.fi-player-backward:before { content: "\f22c"; }
+.fi-player-forward:before { content: "\f22d"; }
+.fi-player-mute:before { content: "\f22e"; }
+.fi-player-pause:before { content: "\f22f"; }
+.fi-player-play:before { content: "\f230"; }
+.fi-player-skip-backward:before { content: "\f231"; }
+.fi-player-skip-forward:before { content: "\f232"; }
+.fi-player-stop:before { content: "\f233"; }
+.fi-player-volume-down:before { content: "\f234"; }
+.fi-player-volume-off:before { content: "\f235"; }
+.fi-player-volume-up:before { content: "\f236"; }
+.fi-plus:before { content: "\f237"; }
+.fi-pointer:before { content: "\f238"; }
+.fi-printer:before { content: "\f239"; }
+.fi-question-circle:before { content: "\f23a"; }
+.fi-reddit:before { content: "\f23b"; }
+.fi-redo:before { content: "\f23c"; }
+.fi-refresh:before { content: "\f23d"; }
+.fi-robot:before { content: "\f23e"; }
+.fi-rocket:before { content: "\f23f"; }
+.fi-save:before { content: "\f240"; }
+.fi-scissors:before { content: "\f241"; }
+.fi-search:before { content: "\f242"; }
+.fi-server:before { content: "\f243"; }
+.fi-share:before { content: "\f244"; }
+.fi-shield:before { content: "\f245"; }
+.fi-smile:before { content: "\f246"; }
+.fi-star:before { content: "\f247"; }
+.fi-star-filled:before { content: "\f248"; }
+.fi-strikethrough:before { content: "\f249"; }
+.fi-table:before { content: "\f24a"; }
+.fi-tablet:before { content: "\f24b"; }
+.fi-tag:before { content: "\f24c"; }
+.fi-target:before { content: "\f24d"; }
+.fi-terminal:before { content: "\f24e"; }
+.fi-times:before { content: "\f24f"; }
+.fi-train:before { content: "\f250"; }
+.fi-trash:before { content: "\f251"; }
+.fi-tumblr:before { content: "\f252"; }
+.fi-twitter:before { content: "\f253"; }
+.fi-underline:before { content: "\f254"; }
+.fi-undo:before { content: "\f255"; }
+.fi-user:before { content: "\f256"; }
+.fi-users:before { content: "\f257"; }
+.fi-video:before { content: "\f258"; }
+.fi-water:before { content: "\f259"; }
+.fi-wifi:before { content: "\f25a"; }
+.fi-window:before { content: "\f25b"; }
+.fi-wrench:before { content: "\f25c"; }
+.fi-youtube:before { content: "\f25d"; }
+    </style>
+
+    <!--[if lte IE 8]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  </head>
+
+  <body class="characters-off">
+    <div id="page" class="container">
+      <header>
+        <h1>Finite Icons <small>(175 glyphs)</small></h1>
+      </header>
+
+      <div class="glyphs">
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-airplane" class="fi-airplane"></i> <span class="name">airplane</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-airplane" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf1af;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-alert-circle" class="fi-alert-circle"></i> <span class="name">alert-circle</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-alert-circle" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf1b0;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-align-center" class="fi-align-center"></i> <span class="name">align-center</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-align-center" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf1b1;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-align-justify" class="fi-align-justify"></i> <span class="name">align-justify</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-align-justify" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf1b2;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-align-left" class="fi-align-left"></i> <span class="name">align-left</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-align-left" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf1b3;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-align-right" class="fi-align-right"></i> <span class="name">align-right</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-align-right" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf1b4;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-arrow-e" class="fi-arrow-e"></i> <span class="name">arrow-e</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-arrow-e" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf1b5;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-arrow-expand" class="fi-arrow-expand"></i> <span class="name">arrow-expand</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-arrow-expand" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf1b6;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-arrow-n" class="fi-arrow-n"></i> <span class="name">arrow-n</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-arrow-n" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf1b7;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-arrow-ne" class="fi-arrow-ne"></i> <span class="name">arrow-ne</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-arrow-ne" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf1b8;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-arrow-nw" class="fi-arrow-nw"></i> <span class="name">arrow-nw</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-arrow-nw" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf1b9;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-arrow-resize-h" class="fi-arrow-resize-h"></i> <span class="name">arrow-resize-h</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-arrow-resize-h" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf1ba;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-arrow-resize-v" class="fi-arrow-resize-v"></i> <span class="name">arrow-resize-v</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-arrow-resize-v" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf1bb;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-arrow-s" class="fi-arrow-s"></i> <span class="name">arrow-s</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-arrow-s" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf1bc;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-arrow-se" class="fi-arrow-se"></i> <span class="name">arrow-se</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-arrow-se" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf1bd;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-arrow-sw" class="fi-arrow-sw"></i> <span class="name">arrow-sw</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-arrow-sw" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf1be;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-arrow-w" class="fi-arrow-w"></i> <span class="name">arrow-w</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-arrow-w" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf1bf;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-astronaut" class="fi-astronaut"></i> <span class="name">astronaut</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-astronaut" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf1c0;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-ban" class="fi-ban"></i> <span class="name">ban</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-ban" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf1c1;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-bell" class="fi-bell"></i> <span class="name">bell</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-bell" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf1c2;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-bill-dollar" class="fi-bill-dollar"></i> <span class="name">bill-dollar</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-bill-dollar" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf1c3;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-bold" class="fi-bold"></i> <span class="name">bold</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-bold" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf1c4;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-book" class="fi-book"></i> <span class="name">book</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-book" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf1c5;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-bookmark" class="fi-bookmark"></i> <span class="name">bookmark</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-bookmark" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf1c6;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-brightness-down" class="fi-brightness-down"></i> <span class="name">brightness-down</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-brightness-down" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf1c7;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-brightness-up" class="fi-brightness-up"></i> <span class="name">brightness-up</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-brightness-up" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf1c8;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-bulb" class="fi-bulb"></i> <span class="name">bulb</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-bulb" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf1c9;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-bus" class="fi-bus"></i> <span class="name">bus</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-bus" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf1ca;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-cabinet" class="fi-cabinet"></i> <span class="name">cabinet</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-cabinet" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf1cb;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-calendar-month" class="fi-calendar-month"></i> <span class="name">calendar-month</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-calendar-month" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf1cc;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-calendar-year" class="fi-calendar-year"></i> <span class="name">calendar-year</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-calendar-year" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf1cd;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-camera" class="fi-camera"></i> <span class="name">camera</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-camera" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf1ce;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-car" class="fi-car"></i> <span class="name">car</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-car" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf1cf;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-caret-down" class="fi-caret-down"></i> <span class="name">caret-down</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-caret-down" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf1d0;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-caret-left" class="fi-caret-left"></i> <span class="name">caret-left</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-caret-left" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf1d1;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-caret-right" class="fi-caret-right"></i> <span class="name">caret-right</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-caret-right" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf1d2;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-caret-up" class="fi-caret-up"></i> <span class="name">caret-up</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-caret-up" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf1d3;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-cart" class="fi-cart"></i> <span class="name">cart</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-cart" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf1d4;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-chart-bar" class="fi-chart-bar"></i> <span class="name">chart-bar</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-chart-bar" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf1d5;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-chart-line" class="fi-chart-line"></i> <span class="name">chart-line</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-chart-line" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf1d6;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-chart-pie" class="fi-chart-pie"></i> <span class="name">chart-pie</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-chart-pie" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf1d7;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-chat" class="fi-chat"></i> <span class="name">chat</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-chat" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf1d8;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-check" class="fi-check"></i> <span class="name">check</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-check" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf1d9;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-check-box" class="fi-check-box"></i> <span class="name">check-box</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-check-box" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf1da;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-chevron-down" class="fi-chevron-down"></i> <span class="name">chevron-down</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-chevron-down" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf1db;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-chevron-left" class="fi-chevron-left"></i> <span class="name">chevron-left</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-chevron-left" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf1dc;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-chevron-right" class="fi-chevron-right"></i> <span class="name">chevron-right</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-chevron-right" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf1dd;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-chevron-up" class="fi-chevron-up"></i> <span class="name">chevron-up</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-chevron-up" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf1de;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-clipboard" class="fi-clipboard"></i> <span class="name">clipboard</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-clipboard" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf1df;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-clock" class="fi-clock"></i> <span class="name">clock</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-clock" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf1e0;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-cloud" class="fi-cloud"></i> <span class="name">cloud</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-cloud" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf1e1;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-cloud-download" class="fi-cloud-download"></i> <span class="name">cloud-download</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-cloud-download" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf1e2;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-cloud-upload" class="fi-cloud-upload"></i> <span class="name">cloud-upload</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-cloud-upload" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf1e3;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-code" class="fi-code"></i> <span class="name">code</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-code" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf1e4;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-cog" class="fi-cog"></i> <span class="name">cog</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-cog" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf1e5;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-coin" class="fi-coin"></i> <span class="name">coin</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-coin" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf1e6;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-compass" class="fi-compass"></i> <span class="name">compass</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-compass" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf1e7;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-conversation" class="fi-conversation"></i> <span class="name">conversation</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-conversation" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf1e8;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-copy" class="fi-copy"></i> <span class="name">copy</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-copy" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf1e9;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-credit-card" class="fi-credit-card"></i> <span class="name">credit-card</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-credit-card" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf1ea;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-desktop" class="fi-desktop"></i> <span class="name">desktop</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-desktop" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf1eb;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-document" class="fi-document"></i> <span class="name">document</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-document" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf1ec;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-document-stack" class="fi-document-stack"></i> <span class="name">document-stack</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-document-stack" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf1ed;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-envelope" class="fi-envelope"></i> <span class="name">envelope</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-envelope" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf1ee;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-envelope-open" class="fi-envelope-open"></i> <span class="name">envelope-open</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-envelope-open" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf1ef;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-external" class="fi-external"></i> <span class="name">external</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-external" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf1f0;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-eye" class="fi-eye"></i> <span class="name">eye</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-eye" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf1f1;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-eye-hide" class="fi-eye-hide"></i> <span class="name">eye-hide</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-eye-hide" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf1f2;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-facebook" class="fi-facebook"></i> <span class="name">facebook</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-facebook" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf1f3;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-feed" class="fi-feed"></i> <span class="name">feed</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-feed" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf1f4;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-film" class="fi-film"></i> <span class="name">film</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-film" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf1f5;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-fire" class="fi-fire"></i> <span class="name">fire</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-fire" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf1f6;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-flag" class="fi-flag"></i> <span class="name">flag</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-flag" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf1f7;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-flask" class="fi-flask"></i> <span class="name">flask</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-flask" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf1f8;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-folder" class="fi-folder"></i> <span class="name">folder</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-folder" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf1f9;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-folder-archive" class="fi-folder-archive"></i> <span class="name">folder-archive</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-folder-archive" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf1fa;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-font" class="fi-font"></i> <span class="name">font</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-font" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf1fb;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-frown" class="fi-frown"></i> <span class="name">frown</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-frown" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf1fc;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-gauge" class="fi-gauge"></i> <span class="name">gauge</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-gauge" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf1fd;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-github" class="fi-github"></i> <span class="name">github</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-github" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf1fe;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-globe" class="fi-globe"></i> <span class="name">globe</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-globe" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf1ff;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-globe-alt" class="fi-globe-alt"></i> <span class="name">globe-alt</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-globe-alt" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf200;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-google" class="fi-google"></i> <span class="name">google</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-google" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf201;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-grid-4" class="fi-grid-4"></i> <span class="name">grid-4</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-grid-4" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf202;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-grid-9" class="fi-grid-9"></i> <span class="name">grid-9</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-grid-9" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf203;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-heading" class="fi-heading"></i> <span class="name">heading</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-heading" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf204;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-heart" class="fi-heart"></i> <span class="name">heart</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-heart" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf205;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-heart-filled" class="fi-heart-filled"></i> <span class="name">heart-filled</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-heart-filled" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf206;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-help" class="fi-help"></i> <span class="name">help</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-help" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf207;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-home" class="fi-home"></i> <span class="name">home</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-home" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf208;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-image" class="fi-image"></i> <span class="name">image</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-image" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf209;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-image-gallery" class="fi-image-gallery"></i> <span class="name">image-gallery</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-image-gallery" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf20a;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-inbox" class="fi-inbox"></i> <span class="name">inbox</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-inbox" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf20b;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-indent" class="fi-indent"></i> <span class="name">indent</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-indent" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf20c;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-info-circle" class="fi-info-circle"></i> <span class="name">info-circle</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-info-circle" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf20d;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-instagram" class="fi-instagram"></i> <span class="name">instagram</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-instagram" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf20e;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-italic" class="fi-italic"></i> <span class="name">italic</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-italic" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf20f;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-key" class="fi-key"></i> <span class="name">key</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-key" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf210;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-keyboard" class="fi-keyboard"></i> <span class="name">keyboard</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-keyboard" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf211;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-laptop" class="fi-laptop"></i> <span class="name">laptop</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-laptop" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf212;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-lightning" class="fi-lightning"></i> <span class="name">lightning</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-lightning" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf213;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-link" class="fi-link"></i> <span class="name">link</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-link" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf214;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-link-broken" class="fi-link-broken"></i> <span class="name">link-broken</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-link-broken" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf215;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-linkedin" class="fi-linkedin"></i> <span class="name">linkedin</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-linkedin" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf216;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-list-ol" class="fi-list-ol"></i> <span class="name">list-ol</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-list-ol" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf217;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-list-ul" class="fi-list-ul"></i> <span class="name">list-ul</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-list-ul" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf218;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-lock" class="fi-lock"></i> <span class="name">lock</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-lock" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf219;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-lock-open" class="fi-lock-open"></i> <span class="name">lock-open</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-lock-open" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf21a;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-logout" class="fi-logout"></i> <span class="name">logout</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-logout" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf21b;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-map" class="fi-map"></i> <span class="name">map</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-map" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf21c;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-marker" class="fi-marker"></i> <span class="name">marker</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-marker" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf21d;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-megaphone" class="fi-megaphone"></i> <span class="name">megaphone</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-megaphone" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf21e;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-menu" class="fi-menu"></i> <span class="name">menu</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-menu" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf21f;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-minus" class="fi-minus"></i> <span class="name">minus</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-minus" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf220;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-mobile" class="fi-mobile"></i> <span class="name">mobile</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-mobile" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf221;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-mouse" class="fi-mouse"></i> <span class="name">mouse</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-mouse" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf222;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-network" class="fi-network"></i> <span class="name">network</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-network" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf223;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-outdent" class="fi-outdent"></i> <span class="name">outdent</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-outdent" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf224;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-paperclip" class="fi-paperclip"></i> <span class="name">paperclip</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-paperclip" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf225;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-paste" class="fi-paste"></i> <span class="name">paste</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-paste" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf226;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-pencil" class="fi-pencil"></i> <span class="name">pencil</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-pencil" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf227;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-pencil-box" class="fi-pencil-box"></i> <span class="name">pencil-box</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-pencil-box" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf228;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-phone" class="fi-phone"></i> <span class="name">phone</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-phone" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf229;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-pin" class="fi-pin"></i> <span class="name">pin</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-pin" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf22a;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-planet" class="fi-planet"></i> <span class="name">planet</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-planet" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf22b;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-player-backward" class="fi-player-backward"></i> <span class="name">player-backward</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-player-backward" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf22c;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-player-forward" class="fi-player-forward"></i> <span class="name">player-forward</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-player-forward" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf22d;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-player-mute" class="fi-player-mute"></i> <span class="name">player-mute</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-player-mute" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf22e;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-player-pause" class="fi-player-pause"></i> <span class="name">player-pause</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-player-pause" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf22f;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-player-play" class="fi-player-play"></i> <span class="name">player-play</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-player-play" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf230;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-player-skip-backward" class="fi-player-skip-backward"></i> <span class="name">player-skip-backward</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-player-skip-backward" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf231;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-player-skip-forward" class="fi-player-skip-forward"></i> <span class="name">player-skip-forward</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-player-skip-forward" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf232;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-player-stop" class="fi-player-stop"></i> <span class="name">player-stop</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-player-stop" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf233;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-player-volume-down" class="fi-player-volume-down"></i> <span class="name">player-volume-down</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-player-volume-down" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf234;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-player-volume-off" class="fi-player-volume-off"></i> <span class="name">player-volume-off</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-player-volume-off" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf235;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-player-volume-up" class="fi-player-volume-up"></i> <span class="name">player-volume-up</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-player-volume-up" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf236;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-plus" class="fi-plus"></i> <span class="name">plus</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-plus" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf237;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-pointer" class="fi-pointer"></i> <span class="name">pointer</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-pointer" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf238;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-printer" class="fi-printer"></i> <span class="name">printer</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-printer" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf239;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-question-circle" class="fi-question-circle"></i> <span class="name">question-circle</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-question-circle" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf23a;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-reddit" class="fi-reddit"></i> <span class="name">reddit</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-reddit" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf23b;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-redo" class="fi-redo"></i> <span class="name">redo</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-redo" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf23c;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-refresh" class="fi-refresh"></i> <span class="name">refresh</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-refresh" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf23d;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-robot" class="fi-robot"></i> <span class="name">robot</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-robot" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf23e;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-rocket" class="fi-rocket"></i> <span class="name">rocket</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-rocket" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf23f;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-save" class="fi-save"></i> <span class="name">save</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-save" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf240;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-scissors" class="fi-scissors"></i> <span class="name">scissors</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-scissors" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf241;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-search" class="fi-search"></i> <span class="name">search</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-search" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf242;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-server" class="fi-server"></i> <span class="name">server</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-server" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf243;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-share" class="fi-share"></i> <span class="name">share</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-share" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf244;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-shield" class="fi-shield"></i> <span class="name">shield</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-shield" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf245;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-smile" class="fi-smile"></i> <span class="name">smile</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-smile" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf246;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-star" class="fi-star"></i> <span class="name">star</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-star" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf247;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-star-filled" class="fi-star-filled"></i> <span class="name">star-filled</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-star-filled" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf248;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-strikethrough" class="fi-strikethrough"></i> <span class="name">strikethrough</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-strikethrough" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf249;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-table" class="fi-table"></i> <span class="name">table</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-table" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf24a;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-tablet" class="fi-tablet"></i> <span class="name">tablet</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-tablet" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf24b;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-tag" class="fi-tag"></i> <span class="name">tag</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-tag" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf24c;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-target" class="fi-target"></i> <span class="name">target</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-target" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf24d;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-terminal" class="fi-terminal"></i> <span class="name">terminal</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-terminal" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf24e;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-times" class="fi-times"></i> <span class="name">times</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-times" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf24f;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-train" class="fi-train"></i> <span class="name">train</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-train" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf250;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-trash" class="fi-trash"></i> <span class="name">trash</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-trash" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf251;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-tumblr" class="fi-tumblr"></i> <span class="name">tumblr</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-tumblr" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf252;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-twitter" class="fi-twitter"></i> <span class="name">twitter</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-twitter" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf253;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-underline" class="fi-underline"></i> <span class="name">underline</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-underline" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf254;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-undo" class="fi-undo"></i> <span class="name">undo</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-undo" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf255;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-user" class="fi-user"></i> <span class="name">user</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-user" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf256;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-users" class="fi-users"></i> <span class="name">users</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-users" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf257;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-video" class="fi-video"></i> <span class="name">video</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-video" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf258;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-water" class="fi-water"></i> <span class="name">water</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-water" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf259;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-wifi" class="fi-wifi"></i> <span class="name">wifi</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-wifi" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf25a;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-window" class="fi-window"></i> <span class="name">window</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-window" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf25b;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-wrench" class="fi-wrench"></i> <span class="name">wrench</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-wrench" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf25c;" />
+          </div>
+        </div>
+        
+        <div class="glyph">
+          <div class="preview-glyphs">
+            <span class="step size-32"><i id="fi-youtube" class="fi-youtube"></i> <span class="name">youtube</span></span>
+          </div>
+
+          <div class="usage">
+            <input class="class" type="text" readonly="readonly" onClick="this.select();" value=".fi-youtube" />
+            <input class="point" type="text" readonly="readonly" onClick="this.select();" value="&amp;#xf25d;" />
+          </div>
+        </div>
+        
+      </div>
+
+      <footer>
+        Icons by <a href="https://jeffmerrick.net">Jeff</a> at <a href="http://www.doejo.com">Doejo</a>. Font generated with <a href="http://fontcustom.com">Font Custom</a>.
+      </footer>
+    </div>
+  </body>
+</html>

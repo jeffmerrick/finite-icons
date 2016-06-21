@@ -1,0 +1,389 @@
+//
+// Icon Font: finite-icons
+//
+
+@font-face {
+  font-family: "finite-icons";
+  src: font-url("./finite-icons.eot");
+  src: font-url("./finite-icons.eot?#iefix") format("embedded-opentype"),
+       font-url("./finite-icons.woff") format("woff"),
+       font-url("./finite-icons.ttf") format("truetype"),
+       font-url("./finite-icons.svg#finite-icons") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "finite-icons";
+    src: font-url("./finite-icons.svg#finite-icons") format("svg");
+  }
+}
+
+[data-icon]:before { content: attr(data-icon); }
+
+[data-icon]:before,
+.fi-airplane:before,
+.fi-alert-circle:before,
+.fi-align-center:before,
+.fi-align-justify:before,
+.fi-align-left:before,
+.fi-align-right:before,
+.fi-arrow-e:before,
+.fi-arrow-expand:before,
+.fi-arrow-n:before,
+.fi-arrow-ne:before,
+.fi-arrow-nw:before,
+.fi-arrow-resize-h:before,
+.fi-arrow-resize-v:before,
+.fi-arrow-s:before,
+.fi-arrow-se:before,
+.fi-arrow-sw:before,
+.fi-arrow-w:before,
+.fi-astronaut:before,
+.fi-ban:before,
+.fi-bell:before,
+.fi-bill-dollar:before,
+.fi-bold:before,
+.fi-book:before,
+.fi-bookmark:before,
+.fi-brightness-down:before,
+.fi-brightness-up:before,
+.fi-bulb:before,
+.fi-bus:before,
+.fi-cabinet:before,
+.fi-calendar-month:before,
+.fi-calendar-year:before,
+.fi-camera:before,
+.fi-car:before,
+.fi-caret-down:before,
+.fi-caret-left:before,
+.fi-caret-right:before,
+.fi-caret-up:before,
+.fi-cart:before,
+.fi-chart-bar:before,
+.fi-chart-line:before,
+.fi-chart-pie:before,
+.fi-chat:before,
+.fi-check:before,
+.fi-check-box:before,
+.fi-chevron-down:before,
+.fi-chevron-left:before,
+.fi-chevron-right:before,
+.fi-chevron-up:before,
+.fi-clipboard:before,
+.fi-clock:before,
+.fi-cloud:before,
+.fi-cloud-download:before,
+.fi-cloud-upload:before,
+.fi-code:before,
+.fi-cog:before,
+.fi-coin:before,
+.fi-compass:before,
+.fi-conversation:before,
+.fi-copy:before,
+.fi-credit-card:before,
+.fi-desktop:before,
+.fi-document:before,
+.fi-document-stack:before,
+.fi-envelope:before,
+.fi-envelope-open:before,
+.fi-external:before,
+.fi-eye:before,
+.fi-eye-hide:before,
+.fi-facebook:before,
+.fi-feed:before,
+.fi-film:before,
+.fi-fire:before,
+.fi-flag:before,
+.fi-flask:before,
+.fi-folder:before,
+.fi-folder-archive:before,
+.fi-font:before,
+.fi-frown:before,
+.fi-gauge:before,
+.fi-github:before,
+.fi-globe:before,
+.fi-globe-alt:before,
+.fi-google:before,
+.fi-grid-4:before,
+.fi-grid-9:before,
+.fi-heading:before,
+.fi-heart:before,
+.fi-heart-filled:before,
+.fi-help:before,
+.fi-home:before,
+.fi-image:before,
+.fi-image-gallery:before,
+.fi-inbox:before,
+.fi-indent:before,
+.fi-info-circle:before,
+.fi-instagram:before,
+.fi-italic:before,
+.fi-key:before,
+.fi-keyboard:before,
+.fi-laptop:before,
+.fi-lightning:before,
+.fi-link:before,
+.fi-link-broken:before,
+.fi-linkedin:before,
+.fi-list-ol:before,
+.fi-list-ul:before,
+.fi-lock:before,
+.fi-lock-open:before,
+.fi-logout:before,
+.fi-map:before,
+.fi-marker:before,
+.fi-megaphone:before,
+.fi-menu:before,
+.fi-minus:before,
+.fi-mobile:before,
+.fi-mouse:before,
+.fi-network:before,
+.fi-outdent:before,
+.fi-paperclip:before,
+.fi-paste:before,
+.fi-pencil:before,
+.fi-pencil-box:before,
+.fi-phone:before,
+.fi-pin:before,
+.fi-planet:before,
+.fi-player-backward:before,
+.fi-player-forward:before,
+.fi-player-mute:before,
+.fi-player-pause:before,
+.fi-player-play:before,
+.fi-player-skip-backward:before,
+.fi-player-skip-forward:before,
+.fi-player-stop:before,
+.fi-player-volume-down:before,
+.fi-player-volume-off:before,
+.fi-player-volume-up:before,
+.fi-plus:before,
+.fi-pointer:before,
+.fi-printer:before,
+.fi-question-circle:before,
+.fi-reddit:before,
+.fi-redo:before,
+.fi-refresh:before,
+.fi-robot:before,
+.fi-rocket:before,
+.fi-save:before,
+.fi-scissors:before,
+.fi-search:before,
+.fi-server:before,
+.fi-share:before,
+.fi-shield:before,
+.fi-smile:before,
+.fi-star:before,
+.fi-star-filled:before,
+.fi-strikethrough:before,
+.fi-table:before,
+.fi-tablet:before,
+.fi-tag:before,
+.fi-target:before,
+.fi-terminal:before,
+.fi-times:before,
+.fi-train:before,
+.fi-trash:before,
+.fi-tumblr:before,
+.fi-twitter:before,
+.fi-underline:before,
+.fi-undo:before,
+.fi-user:before,
+.fi-users:before,
+.fi-video:before,
+.fi-water:before,
+.fi-wifi:before,
+.fi-window:before,
+.fi-wrench:before,
+.fi-youtube:before {
+  display: inline-block;
+  font-family: "finite-icons";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  line-height: 1;
+  text-decoration: inherit;
+  text-rendering: optimizeLegibility;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+}
+
+.fi-airplane:before { content: "\f1af"; }
+.fi-alert-circle:before { content: "\f1b0"; }
+.fi-align-center:before { content: "\f1b1"; }
+.fi-align-justify:before { content: "\f1b2"; }
+.fi-align-left:before { content: "\f1b3"; }
+.fi-align-right:before { content: "\f1b4"; }
+.fi-arrow-e:before { content: "\f1b5"; }
+.fi-arrow-expand:before { content: "\f1b6"; }
+.fi-arrow-n:before { content: "\f1b7"; }
+.fi-arrow-ne:before { content: "\f1b8"; }
+.fi-arrow-nw:before { content: "\f1b9"; }
+.fi-arrow-resize-h:before { content: "\f1ba"; }
+.fi-arrow-resize-v:before { content: "\f1bb"; }
+.fi-arrow-s:before { content: "\f1bc"; }
+.fi-arrow-se:before { content: "\f1bd"; }
+.fi-arrow-sw:before { content: "\f1be"; }
+.fi-arrow-w:before { content: "\f1bf"; }
+.fi-astronaut:before { content: "\f1c0"; }
+.fi-ban:before { content: "\f1c1"; }
+.fi-bell:before { content: "\f1c2"; }
+.fi-bill-dollar:before { content: "\f1c3"; }
+.fi-bold:before { content: "\f1c4"; }
+.fi-book:before { content: "\f1c5"; }
+.fi-bookmark:before { content: "\f1c6"; }
+.fi-brightness-down:before { content: "\f1c7"; }
+.fi-brightness-up:before { content: "\f1c8"; }
+.fi-bulb:before { content: "\f1c9"; }
+.fi-bus:before { content: "\f1ca"; }
+.fi-cabinet:before { content: "\f1cb"; }
+.fi-calendar-month:before { content: "\f1cc"; }
+.fi-calendar-year:before { content: "\f1cd"; }
+.fi-camera:before { content: "\f1ce"; }
+.fi-car:before { content: "\f1cf"; }
+.fi-caret-down:before { content: "\f1d0"; }
+.fi-caret-left:before { content: "\f1d1"; }
+.fi-caret-right:before { content: "\f1d2"; }
+.fi-caret-up:before { content: "\f1d3"; }
+.fi-cart:before { content: "\f1d4"; }
+.fi-chart-bar:before { content: "\f1d5"; }
+.fi-chart-line:before { content: "\f1d6"; }
+.fi-chart-pie:before { content: "\f1d7"; }
+.fi-chat:before { content: "\f1d8"; }
+.fi-check:before { content: "\f1d9"; }
+.fi-check-box:before { content: "\f1da"; }
+.fi-chevron-down:before { content: "\f1db"; }
+.fi-chevron-left:before { content: "\f1dc"; }
+.fi-chevron-right:before { content: "\f1dd"; }
+.fi-chevron-up:before { content: "\f1de"; }
+.fi-clipboard:before { content: "\f1df"; }
+.fi-clock:before { content: "\f1e0"; }
+.fi-cloud:before { content: "\f1e1"; }
+.fi-cloud-download:before { content: "\f1e2"; }
+.fi-cloud-upload:before { content: "\f1e3"; }
+.fi-code:before { content: "\f1e4"; }
+.fi-cog:before { content: "\f1e5"; }
+.fi-coin:before { content: "\f1e6"; }
+.fi-compass:before { content: "\f1e7"; }
+.fi-conversation:before { content: "\f1e8"; }
+.fi-copy:before { content: "\f1e9"; }
+.fi-credit-card:before { content: "\f1ea"; }
+.fi-desktop:before { content: "\f1eb"; }
+.fi-document:before { content: "\f1ec"; }
+.fi-document-stack:before { content: "\f1ed"; }
+.fi-envelope:before { content: "\f1ee"; }
+.fi-envelope-open:before { content: "\f1ef"; }
+.fi-external:before { content: "\f1f0"; }
+.fi-eye:before { content: "\f1f1"; }
+.fi-eye-hide:before { content: "\f1f2"; }
+.fi-facebook:before { content: "\f1f3"; }
+.fi-feed:before { content: "\f1f4"; }
+.fi-film:before { content: "\f1f5"; }
+.fi-fire:before { content: "\f1f6"; }
+.fi-flag:before { content: "\f1f7"; }
+.fi-flask:before { content: "\f1f8"; }
+.fi-folder:before { content: "\f1f9"; }
+.fi-folder-archive:before { content: "\f1fa"; }
+.fi-font:before { content: "\f1fb"; }
+.fi-frown:before { content: "\f1fc"; }
+.fi-gauge:before { content: "\f1fd"; }
+.fi-github:before { content: "\f1fe"; }
+.fi-globe:before { content: "\f1ff"; }
+.fi-globe-alt:before { content: "\f200"; }
+.fi-google:before { content: "\f201"; }
+.fi-grid-4:before { content: "\f202"; }
+.fi-grid-9:before { content: "\f203"; }
+.fi-heading:before { content: "\f204"; }
+.fi-heart:before { content: "\f205"; }
+.fi-heart-filled:before { content: "\f206"; }
+.fi-help:before { content: "\f207"; }
+.fi-home:before { content: "\f208"; }
+.fi-image:before { content: "\f209"; }
+.fi-image-gallery:before { content: "\f20a"; }
+.fi-inbox:before { content: "\f20b"; }
+.fi-indent:before { content: "\f20c"; }
+.fi-info-circle:before { content: "\f20d"; }
+.fi-instagram:before { content: "\f20e"; }
+.fi-italic:before { content: "\f20f"; }
+.fi-key:before { content: "\f210"; }
+.fi-keyboard:before { content: "\f211"; }
+.fi-laptop:before { content: "\f212"; }
+.fi-lightning:before { content: "\f213"; }
+.fi-link:before { content: "\f214"; }
+.fi-link-broken:before { content: "\f215"; }
+.fi-linkedin:before { content: "\f216"; }
+.fi-list-ol:before { content: "\f217"; }
+.fi-list-ul:before { content: "\f218"; }
+.fi-lock:before { content: "\f219"; }
+.fi-lock-open:before { content: "\f21a"; }
+.fi-logout:before { content: "\f21b"; }
+.fi-map:before { content: "\f21c"; }
+.fi-marker:before { content: "\f21d"; }
+.fi-megaphone:before { content: "\f21e"; }
+.fi-menu:before { content: "\f21f"; }
+.fi-minus:before { content: "\f220"; }
+.fi-mobile:before { content: "\f221"; }
+.fi-mouse:before { content: "\f222"; }
+.fi-network:before { content: "\f223"; }
+.fi-outdent:before { content: "\f224"; }
+.fi-paperclip:before { content: "\f225"; }
+.fi-paste:before { content: "\f226"; }
+.fi-pencil:before { content: "\f227"; }
+.fi-pencil-box:before { content: "\f228"; }
+.fi-phone:before { content: "\f229"; }
+.fi-pin:before { content: "\f22a"; }
+.fi-planet:before { content: "\f22b"; }
+.fi-player-backward:before { content: "\f22c"; }
+.fi-player-forward:before { content: "\f22d"; }
+.fi-player-mute:before { content: "\f22e"; }
+.fi-player-pause:before { content: "\f22f"; }
+.fi-player-play:before { content: "\f230"; }
+.fi-player-skip-backward:before { content: "\f231"; }
+.fi-player-skip-forward:before { content: "\f232"; }
+.fi-player-stop:before { content: "\f233"; }
+.fi-player-volume-down:before { content: "\f234"; }
+.fi-player-volume-off:before { content: "\f235"; }
+.fi-player-volume-up:before { content: "\f236"; }
+.fi-plus:before { content: "\f237"; }
+.fi-pointer:before { content: "\f238"; }
+.fi-printer:before { content: "\f239"; }
+.fi-question-circle:before { content: "\f23a"; }
+.fi-reddit:before { content: "\f23b"; }
+.fi-redo:before { content: "\f23c"; }
+.fi-refresh:before { content: "\f23d"; }
+.fi-robot:before { content: "\f23e"; }
+.fi-rocket:before { content: "\f23f"; }
+.fi-save:before { content: "\f240"; }
+.fi-scissors:before { content: "\f241"; }
+.fi-search:before { content: "\f242"; }
+.fi-server:before { content: "\f243"; }
+.fi-share:before { content: "\f244"; }
+.fi-shield:before { content: "\f245"; }
+.fi-smile:before { content: "\f246"; }
+.fi-star:before { content: "\f247"; }
+.fi-star-filled:before { content: "\f248"; }
+.fi-strikethrough:before { content: "\f249"; }
+.fi-table:before { content: "\f24a"; }
+.fi-tablet:before { content: "\f24b"; }
+.fi-tag:before { content: "\f24c"; }
+.fi-target:before { content: "\f24d"; }
+.fi-terminal:before { content: "\f24e"; }
+.fi-times:before { content: "\f24f"; }
+.fi-train:before { content: "\f250"; }
+.fi-trash:before { content: "\f251"; }
+.fi-tumblr:before { content: "\f252"; }
+.fi-twitter:before { content: "\f253"; }
+.fi-underline:before { content: "\f254"; }
+.fi-undo:before { content: "\f255"; }
+.fi-user:before { content: "\f256"; }
+.fi-users:before { content: "\f257"; }
+.fi-video:before { content: "\f258"; }
+.fi-water:before { content: "\f259"; }
+.fi-wifi:before { content: "\f25a"; }
+.fi-window:before { content: "\f25b"; }
+.fi-wrench:before { content: "\f25c"; }
+.fi-youtube:before { content: "\f25d"; }
