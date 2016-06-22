@@ -382,7 +382,7 @@ textarea {
     border-radius: 4px;
     color: #fff;
     content: attr(data-balloon);
-    font-size: 12px;
+    font-size: 10px;
     padding: .5em 1em;
     position: absolute;
     white-space: nowrap;
@@ -563,11 +563,23 @@ body {
   background: #B4B8BB;
   box-sizing: border-box;
   text-align: center;
-  font-family: 'Yantramanav', sans-serif; }
+  font-family: 'Yantramanav', sans-serif;
+  font-weight: 300;
+  color: #75787b;
+  text-transform: uppercase;
+  letter-spacing: 2px; }
+
+a {
+  color: #56585A;
+  text-decoration: none;
+  font-weight: 400; }
 
 .logo {
-  margin: 10vh auto;
-  height: 32px; }
+  margin: 10vh auto 5vh auto;
+  height: 16px; }
+
+.finite-icons-sprite {
+  display: none; }
 
 ul.glyphs {
   list-style-type: none;
@@ -575,20 +587,28 @@ ul.glyphs {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  margin: 0 10vh 10vh 10vh;
-  padding: 0; }
+  margin: 0 auto;
+  padding: 0 10vh 0 10vh;
+  max-width: 1094px; }
   ul.glyphs li {
     padding: 10px; }
     ul.glyphs li .icon {
-      width: 32px;
-      height: 32px;
       fill: #56585A;
-      transition: transform .1s linear; }
+      transition: all .1s linear; }
     ul.glyphs li:hover .icon {
       fill: #000;
       transform: scale(2); }
+  ul.glyphs.size-16 .icon {
+    width: 16px;
+    height: 16px; }
+  ul.glyphs.size-32 .icon {
+    width: 32px;
+    height: 32px; }
+  ul.glyphs.size-48 .icon {
+    width: 48px;
+    height: 48px; }
 
-.button {
+a.button {
   display: inline-block;
   padding: 15px;
   font-size: 12px;
@@ -601,8 +621,34 @@ ul.glyphs {
   text-align: center;
   margin: 0 15px 15px 0;
   white-space: nowrap; }
-  .button .icon {
+  a.button .icon {
     fill: #EAEAEA;
     width: 16px;
     height: 16px;
     margin: 0 10px -2px 0; }
+  a.button:hover {
+    background-color: #000; }
+
+.sizer {
+  margin-bottom: 5vh; }
+  .sizer button {
+    appearance: none;
+    cursor: pointer;
+    background: transparent;
+    outline: 0;
+    color: #75787b;
+    font-weight: 400;
+    font-size: 12px;
+    border: 2px solid transparent;
+    border-width: 0 0 2px; }
+    .sizer button.active {
+      color: #56585A;
+      border-color: #56585A; }
+
+.content p {
+  font-size: 14px;
+  margin: 5vh; }
+
+footer {
+  padding: 5vh 0;
+  font-size: 10px; }
