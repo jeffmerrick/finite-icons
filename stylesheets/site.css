@@ -593,6 +593,7 @@ ul.glyphs {
   ul.glyphs li {
     padding: 10px; }
     ul.glyphs li .icon {
+      display: block;
       fill: #56585A;
       transition: all .1s linear; }
     ul.glyphs li:hover .icon {
