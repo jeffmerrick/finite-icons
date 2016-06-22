@@ -1,3 +1,5 @@
+![finite preview](http://finiteicons.com/images/finite-preview.png)
+
 # [Finite Icons](http://finiteicons.com)
 ### A set of 180 icons available as an icon font, SVG sprite and individual svg files.
 
