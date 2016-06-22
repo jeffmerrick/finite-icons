@@ -568,6 +568,21 @@ body {
   color: #75787b;
   text-transform: uppercase;
   letter-spacing: 2px; }
+  body.size-16 .logo {
+    transform: scale(1); }
+  body.size-16 .icon {
+    width: 16px;
+    height: 16px; }
+  body.size-32 .logo {
+    transform: scale(2); }
+  body.size-32 .icon {
+    width: 32px;
+    height: 32px; }
+  body.size-48 .logo {
+    transform: scale(3); }
+  body.size-48 .icon {
+    width: 48px;
+    height: 48px; }
 
 a {
   color: #56585A;
@@ -576,7 +591,8 @@ a {
 
 .logo {
   margin: 10vh auto 5vh auto;
-  height: 16px; }
+  height: 16px;
+  transition: all .1s linear; }
 
 .finite-icons-sprite {
   display: none; }
@@ -588,8 +604,13 @@ ul.glyphs {
   flex-wrap: wrap;
   justify-content: center;
   margin: 0 auto;
-  padding: 0 10vh 0 10vh;
-  max-width: 1094px; }
+  padding: 0 10vh 0 10vh; }
+  .size-16 ul.glyphs {
+    max-width: 1094px; }
+  .size-32 ul.glyphs {
+    max-width: 1590px; }
+  .size-48 ul.glyphs {
+    max-width: 2065px; }
   ul.glyphs li {
     padding: 10px; }
     ul.glyphs li .icon {
@@ -599,15 +620,6 @@ ul.glyphs {
     ul.glyphs li:hover .icon {
       fill: #000;
       transform: scale(2); }
-  ul.glyphs.size-16 .icon {
-    width: 16px;
-    height: 16px; }
-  ul.glyphs.size-32 .icon {
-    width: 32px;
-    height: 32px; }
-  ul.glyphs.size-48 .icon {
-    width: 48px;
-    height: 48px; }
 
 a.button {
   display: inline-block;
