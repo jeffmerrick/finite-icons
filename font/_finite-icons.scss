@@ -43,6 +43,7 @@
 .fi-astronaut:before,
 .fi-ban:before,
 .fi-bell:before,
+.fi-bicycle:before,
 .fi-bill-dollar:before,
 .fi-bold:before,
 .fi-book:before,
@@ -52,8 +53,8 @@
 .fi-bulb:before,
 .fi-bus:before,
 .fi-cabinet:before,
+.fi-calendar-day:before,
 .fi-calendar-month:before,
-.fi-calendar-year:before,
 .fi-camera:before,
 .fi-car:before,
 .fi-caret-down:before,
@@ -109,6 +110,7 @@
 .fi-grid-4:before,
 .fi-grid-9:before,
 .fi-heading:before,
+.fi-headphones:before,
 .fi-heart:before,
 .fi-heart-filled:before,
 .fi-help:before,
@@ -129,6 +131,7 @@
 .fi-linkedin:before,
 .fi-list-ol:before,
 .fi-list-ul:before,
+.fi-location:before,
 .fi-lock:before,
 .fi-lock-open:before,
 .fi-logout:before,
@@ -139,6 +142,7 @@
 .fi-minus:before,
 .fi-mobile:before,
 .fi-mouse:before,
+.fi-music:before,
 .fi-network:before,
 .fi-outdent:before,
 .fi-paperclip:before,
@@ -181,7 +185,8 @@
 .fi-table:before,
 .fi-tablet:before,
 .fi-tag:before,
-.fi-target:before,
+.fi-target-39:before,
+.fi-target-80:before,
 .fi-terminal:before,
 .fi-times:before,
 .fi-train:before,
@@ -232,6 +237,7 @@
 .fi-astronaut:before { content: "\f1c0"; }
 .fi-ban:before { content: "\f1c1"; }
 .fi-bell:before { content: "\f1c2"; }
+.fi-bicycle:before { content: "\f25e"; }
 .fi-bill-dollar:before { content: "\f1c3"; }
 .fi-bold:before { content: "\f1c4"; }
 .fi-book:before { content: "\f1c5"; }
@@ -241,8 +247,8 @@
 .fi-bulb:before { content: "\f1c9"; }
 .fi-bus:before { content: "\f1ca"; }
 .fi-cabinet:before { content: "\f1cb"; }
+.fi-calendar-day:before { content: "\f25f"; }
 .fi-calendar-month:before { content: "\f1cc"; }
-.fi-calendar-year:before { content: "\f1cd"; }
 .fi-camera:before { content: "\f1ce"; }
 .fi-car:before { content: "\f1cf"; }
 .fi-caret-down:before { content: "\f1d0"; }
@@ -298,6 +304,7 @@
 .fi-grid-4:before { content: "\f202"; }
 .fi-grid-9:before { content: "\f203"; }
 .fi-heading:before { content: "\f204"; }
+.fi-headphones:before { content: "\f274"; }
 .fi-heart:before { content: "\f205"; }
 .fi-heart-filled:before { content: "\f206"; }
 .fi-help:before { content: "\f207"; }
@@ -318,6 +325,7 @@
 .fi-linkedin:before { content: "\f216"; }
 .fi-list-ol:before { content: "\f217"; }
 .fi-list-ul:before { content: "\f218"; }
+.fi-location:before { content: "\f275"; }
 .fi-lock:before { content: "\f219"; }
 .fi-lock-open:before { content: "\f21a"; }
 .fi-logout:before { content: "\f21b"; }
@@ -328,6 +336,7 @@
 .fi-minus:before { content: "\f220"; }
 .fi-mobile:before { content: "\f221"; }
 .fi-mouse:before { content: "\f222"; }
+.fi-music:before { content: "\f276"; }
 .fi-network:before { content: "\f223"; }
 .fi-outdent:before { content: "\f224"; }
 .fi-paperclip:before { content: "\f225"; }
@@ -370,7 +379,8 @@
 .fi-table:before { content: "\f24a"; }
 .fi-tablet:before { content: "\f24b"; }
 .fi-tag:before { content: "\f24c"; }
-.fi-target:before { content: "\f24d"; }
+.fi-target-39:before { content: "\f277"; }
+.fi-target-80:before { content: "\f278"; }
 .fi-terminal:before { content: "\f24e"; }
 .fi-times:before { content: "\f24f"; }
 .fi-train:before { content: "\f250"; }
@@ -408,6 +418,7 @@ $font-finite-icons-arrow-w: "\f1bf";
 $font-finite-icons-astronaut: "\f1c0";
 $font-finite-icons-ban: "\f1c1";
 $font-finite-icons-bell: "\f1c2";
+$font-finite-icons-bicycle: "\f25e";
 $font-finite-icons-bill-dollar: "\f1c3";
 $font-finite-icons-bold: "\f1c4";
 $font-finite-icons-book: "\f1c5";
@@ -417,8 +428,8 @@ $font-finite-icons-brightness-up: "\f1c8";
 $font-finite-icons-bulb: "\f1c9";
 $font-finite-icons-bus: "\f1ca";
 $font-finite-icons-cabinet: "\f1cb";
+$font-finite-icons-calendar-day: "\f25f";
 $font-finite-icons-calendar-month: "\f1cc";
-$font-finite-icons-calendar-year: "\f1cd";
 $font-finite-icons-camera: "\f1ce";
 $font-finite-icons-car: "\f1cf";
 $font-finite-icons-caret-down: "\f1d0";
@@ -474,6 +485,7 @@ $font-finite-icons-google: "\f201";
 $font-finite-icons-grid-4: "\f202";
 $font-finite-icons-grid-9: "\f203";
 $font-finite-icons-heading: "\f204";
+$font-finite-icons-headphones: "\f274";
 $font-finite-icons-heart: "\f205";
 $font-finite-icons-heart-filled: "\f206";
 $font-finite-icons-help: "\f207";
@@ -494,6 +506,7 @@ $font-finite-icons-link-broken: "\f215";
 $font-finite-icons-linkedin: "\f216";
 $font-finite-icons-list-ol: "\f217";
 $font-finite-icons-list-ul: "\f218";
+$font-finite-icons-location: "\f275";
 $font-finite-icons-lock: "\f219";
 $font-finite-icons-lock-open: "\f21a";
 $font-finite-icons-logout: "\f21b";
@@ -504,6 +517,7 @@ $font-finite-icons-menu: "\f21f";
 $font-finite-icons-minus: "\f220";
 $font-finite-icons-mobile: "\f221";
 $font-finite-icons-mouse: "\f222";
+$font-finite-icons-music: "\f276";
 $font-finite-icons-network: "\f223";
 $font-finite-icons-outdent: "\f224";
 $font-finite-icons-paperclip: "\f225";
@@ -546,7 +560,8 @@ $font-finite-icons-strikethrough: "\f249";
 $font-finite-icons-table: "\f24a";
 $font-finite-icons-tablet: "\f24b";
 $font-finite-icons-tag: "\f24c";
-$font-finite-icons-target: "\f24d";
+$font-finite-icons-target-39: "\f277";
+$font-finite-icons-target-80: "\f278";
 $font-finite-icons-terminal: "\f24e";
 $font-finite-icons-times: "\f24f";
 $font-finite-icons-train: "\f250";

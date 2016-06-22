@@ -122,6 +122,12 @@
     },
   
     {
+      "name": "bicycle",
+      "selector": ".fi-bicycle",
+      "point": "&#xf25e"
+    },
+  
+    {
       "name": "bill-dollar",
       "selector": ".fi-bill-dollar",
       "point": "&#xf1c3"
@@ -176,15 +182,15 @@
     },
   
     {
-      "name": "calendar-month",
-      "selector": ".fi-calendar-month",
-      "point": "&#xf1cc"
+      "name": "calendar-day",
+      "selector": ".fi-calendar-day",
+      "point": "&#xf25f"
     },
   
     {
-      "name": "calendar-year",
-      "selector": ".fi-calendar-year",
-      "point": "&#xf1cd"
+      "name": "calendar-month",
+      "selector": ".fi-calendar-month",
+      "point": "&#xf1cc"
     },
   
     {
@@ -518,6 +524,12 @@
     },
   
     {
+      "name": "headphones",
+      "selector": ".fi-headphones",
+      "point": "&#xf274"
+    },
+  
+    {
       "name": "heart",
       "selector": ".fi-heart",
       "point": "&#xf205"
@@ -638,6 +650,12 @@
     },
   
     {
+      "name": "location",
+      "selector": ".fi-location",
+      "point": "&#xf275"
+    },
+  
+    {
       "name": "lock",
       "selector": ".fi-lock",
       "point": "&#xf219"
@@ -695,6 +713,12 @@
       "name": "mouse",
       "selector": ".fi-mouse",
       "point": "&#xf222"
+    },
+  
+    {
+      "name": "music",
+      "selector": ".fi-music",
+      "point": "&#xf276"
     },
   
     {
@@ -950,9 +974,15 @@
     },
   
     {
-      "name": "target",
-      "selector": ".fi-target",
-      "point": "&#xf24d"
+      "name": "target-39",
+      "selector": ".fi-target-39",
+      "point": "&#xf277"
+    },
+  
+    {
+      "name": "target-80",
+      "selector": ".fi-target-80",
+      "point": "&#xf278"
     },
   
     {
