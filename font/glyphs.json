@@ -368,6 +368,12 @@
     },
   
     {
+      "name": "crosshairs",
+      "selector": ".fi-crosshairs",
+      "point": "&#xf279"
+    },
+  
+    {
       "name": "desktop",
       "selector": ".fi-desktop",
       "point": "&#xf1eb"
@@ -974,15 +980,9 @@
     },
   
     {
-      "name": "target-39",
-      "selector": ".fi-target-39",
-      "point": "&#xf277"
-    },
-  
-    {
-      "name": "target-80",
-      "selector": ".fi-target-80",
-      "point": "&#xf278"
+      "name": "target",
+      "selector": ".fi-target",
+      "point": "&#xf27a"
     },
   
     {
