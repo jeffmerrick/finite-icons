@@ -36,9 +36,8 @@ end
 
 # Build-specific configuration
 configure :build do
-  set :css_dir, "/finite-icons/stylesheets"
-  set :js_dir, "/finite-icons/javascripts"
-  set :images_dir, "/finite-icons/images"
+  activate :relative_assets
+  set :relative_links, true  
 
   # Minify CSS on build
   # activate :minify_css
