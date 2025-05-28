@@ -1,0 +1,149 @@
+@charset "utf-8";
+@import "normalize";
+@import "balloon";
+
+body {
+  background:#B4B8BB;
+  box-sizing:border-box;
+  text-align:center;
+  font-family: 'Yantramanav', sans-serif;
+  font-weight:300;
+  color:#75787b;
+  text-transform:uppercase;
+  letter-spacing:2px;
+
+  &.size-16 {
+    .logo {
+      transform:scale(1);
+    }
+    .icon {
+      width:16px;
+      height:16px;
+    }
+  }
+  &.size-32 {
+    .logo {
+      transform:scale(2);
+    }
+    .icon {
+      width:32px;
+      height:32px;
+    }
+  }      
+  &.size-48 {
+    .logo {
+      transform:scale(3);
+    }
+    .icon {
+      width:48px;
+      height:48px;
+    }
+  }
+
+}
+
+a {
+  color:#56585A;
+  text-decoration:none;
+  font-weight:400;
+}
+
+.logo {
+  margin:10vh auto 5vh auto;
+  height:16px;
+  transition:all .1s linear;
+}
+
+.finite-icons-sprite {display:none;}
+
+ul.glyphs {
+  list-style-type:none;
+  display:flex;
+  flex-direction:row;
+  flex-wrap:wrap;
+  justify-content:center;
+  margin:0 auto;
+  padding:0 10vh 0 10vh;
+  
+  .size-16 & {
+    max-width:1094px;
+  }
+  .size-32 & {
+    max-width:1590px;
+  }
+  .size-48 & {
+    max-width:2065px;
+  }  
+  
+  li {
+    padding:10px;
+    .icon {
+      display:block;
+      fill:#56585A;
+      transition:all .1s linear;
+    }
+
+    &:hover {
+      .icon {
+        fill:#000;
+        transform:scale(2);
+      }
+    }
+  }
+}
+
+a.button {
+  display:inline-block;
+  padding:15px;
+  font-size:12px;
+  background-color:#56585A;
+  color:#EAEAEA;
+  text-decoration:none;
+  text-transform:uppercase;
+  letter-spacing:2px;
+  border-radius:2px;
+  text-align:center;
+  margin:0 15px 15px 0;
+  white-space:nowrap;
+
+  .icon {
+    fill:#EAEAEA;
+    width:16px;
+    height:16px;
+    margin:0 10px -2px 0;
+  }
+
+  &:hover {
+    background-color:#000;
+  }
+}
+
+.sizer {
+  margin-bottom:5vh;
+
+  button {
+    appearance:none;
+    cursor:pointer;
+    background:transparent;
+    outline:0;
+    color:#75787b;
+    font-weight:400;
+    font-size:12px;
+    border:2px solid transparent;
+    border-width:0 0 2px;
+    &.active {
+      color:#56585A;
+      border-color:#56585A;
+    }
+  }
+}
+
+.content p {
+  font-size:14px;
+  margin:5vh;
+}
+
+footer {
+  padding:5vh 0;
+  font-size:10px;
+}

@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+  <head>
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta charset="utf-8">
+    <meta content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+    <meta property="description" content="An icon set optimized for small sizes with 180 glyphs.">
+    <meta name="robots" content="index, follow">
+    
+    <meta property="og:title" content="Finite Icons">
+    <meta property="og:site_name" content="Finite Icons">
+    <meta property="og:url" content="https://jeffmerrick.github.io/finite-icons">
+    <meta property="og:image" content="https://jeffmerrick.github.io/finite-icons/images/finite-preview.png" />
+    <meta property="og:description" content="An icon set optimized for small sizes with 180 glyphs.">
+    <meta property="og:type" content="website">
+
+
+    <%= favicon_tag "images/favicon.png" %>
+
+    <title><%= current_page.data.title || "Finite Icons" %></title>
+
+    <link href="https://fonts.googleapis.com/css?family=Yantramanav:100,300,400" rel="stylesheet">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+
+    <%= stylesheet_link_tag :site %>
+    <%= javascript_include_tag :all %>
+  </head>
+
+  <body class="<%= page_classes %> size-16">
+    <%= yield %>
+  </body>
+</html>

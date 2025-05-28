@@ -1,0 +1,40 @@
+---
+title: Finite Icons
+---
+<%= image_tag "finite-logo.svg", class: "logo" %>
+
+<%= partial "shared/sprite" %>
+
+<div class="sizer">
+  <button data-size="16" class="active">16</button>
+  <button data-size="32">32</button>
+  <button data-size="48">48</button>
+</div>
+
+<ul class="glyphs">
+  <% data.icons.glyphs.each do |g| %>
+    <li data-balloon="<%= g.name %>" data-balloon-pos="up">
+      <svg class="icon">
+        <use xlink:href="#<%= g.name %>"></use>
+      </svg>
+    </li>
+  <% end %>
+</ul>
+
+<section class="content">
+
+  <p>An 180 glyph icon set optimized for display at small sizes.</p>
+
+  <a class="button" href="https://github.com/jeffmerrick/finite-icons/archive/master.zip" target="_blank">
+    <svg class="icon"><use xlink:href="#folder-archive"></use></svg>Download .zip
+  </a>
+
+  <a class="button" href="https://github.com/jeffmerrick/finite-icons" target="_blank">
+    <svg class="icon"><use xlink:href="#github"></use></svg>View on github
+  </a>
+
+</section>
+
+<footer>
+  <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a> &bull; Made by <a href="http://jeffmerrick.net" target="_blank">Jeff</a>.
+</footer>

@@ -1,0 +1,1085 @@
+{
+  "glyphs": [
+  
+    {
+      "name": "airplane",
+      "selector": ".fi-airplane",
+      "point": "&#xf1af"
+    },
+  
+    {
+      "name": "alert-circle",
+      "selector": ".fi-alert-circle",
+      "point": "&#xf1b0"
+    },
+  
+    {
+      "name": "align-center",
+      "selector": ".fi-align-center",
+      "point": "&#xf1b1"
+    },
+  
+    {
+      "name": "align-justify",
+      "selector": ".fi-align-justify",
+      "point": "&#xf1b2"
+    },
+  
+    {
+      "name": "align-left",
+      "selector": ".fi-align-left",
+      "point": "&#xf1b3"
+    },
+  
+    {
+      "name": "align-right",
+      "selector": ".fi-align-right",
+      "point": "&#xf1b4"
+    },
+  
+    {
+      "name": "arrow-e",
+      "selector": ".fi-arrow-e",
+      "point": "&#xf1b5"
+    },
+  
+    {
+      "name": "arrow-expand",
+      "selector": ".fi-arrow-expand",
+      "point": "&#xf1b6"
+    },
+  
+    {
+      "name": "arrow-n",
+      "selector": ".fi-arrow-n",
+      "point": "&#xf1b7"
+    },
+  
+    {
+      "name": "arrow-ne",
+      "selector": ".fi-arrow-ne",
+      "point": "&#xf1b8"
+    },
+  
+    {
+      "name": "arrow-nw",
+      "selector": ".fi-arrow-nw",
+      "point": "&#xf1b9"
+    },
+  
+    {
+      "name": "arrow-resize-h",
+      "selector": ".fi-arrow-resize-h",
+      "point": "&#xf1ba"
+    },
+  
+    {
+      "name": "arrow-resize-v",
+      "selector": ".fi-arrow-resize-v",
+      "point": "&#xf1bb"
+    },
+  
+    {
+      "name": "arrow-s",
+      "selector": ".fi-arrow-s",
+      "point": "&#xf1bc"
+    },
+  
+    {
+      "name": "arrow-se",
+      "selector": ".fi-arrow-se",
+      "point": "&#xf1bd"
+    },
+  
+    {
+      "name": "arrow-sw",
+      "selector": ".fi-arrow-sw",
+      "point": "&#xf1be"
+    },
+  
+    {
+      "name": "arrow-w",
+      "selector": ".fi-arrow-w",
+      "point": "&#xf1bf"
+    },
+  
+    {
+      "name": "astronaut",
+      "selector": ".fi-astronaut",
+      "point": "&#xf1c0"
+    },
+  
+    {
+      "name": "ban",
+      "selector": ".fi-ban",
+      "point": "&#xf1c1"
+    },
+  
+    {
+      "name": "bell",
+      "selector": ".fi-bell",
+      "point": "&#xf1c2"
+    },
+  
+    {
+      "name": "bicycle",
+      "selector": ".fi-bicycle",
+      "point": "&#xf25e"
+    },
+  
+    {
+      "name": "bill-dollar",
+      "selector": ".fi-bill-dollar",
+      "point": "&#xf1c3"
+    },
+  
+    {
+      "name": "bold",
+      "selector": ".fi-bold",
+      "point": "&#xf1c4"
+    },
+  
+    {
+      "name": "book",
+      "selector": ".fi-book",
+      "point": "&#xf1c5"
+    },
+  
+    {
+      "name": "bookmark",
+      "selector": ".fi-bookmark",
+      "point": "&#xf1c6"
+    },
+  
+    {
+      "name": "brightness-down",
+      "selector": ".fi-brightness-down",
+      "point": "&#xf1c7"
+    },
+  
+    {
+      "name": "brightness-up",
+      "selector": ".fi-brightness-up",
+      "point": "&#xf1c8"
+    },
+  
+    {
+      "name": "bulb",
+      "selector": ".fi-bulb",
+      "point": "&#xf1c9"
+    },
+  
+    {
+      "name": "bus",
+      "selector": ".fi-bus",
+      "point": "&#xf1ca"
+    },
+  
+    {
+      "name": "cabinet",
+      "selector": ".fi-cabinet",
+      "point": "&#xf1cb"
+    },
+  
+    {
+      "name": "calendar-day",
+      "selector": ".fi-calendar-day",
+      "point": "&#xf25f"
+    },
+  
+    {
+      "name": "calendar-month",
+      "selector": ".fi-calendar-month",
+      "point": "&#xf1cc"
+    },
+  
+    {
+      "name": "camera",
+      "selector": ".fi-camera",
+      "point": "&#xf1ce"
+    },
+  
+    {
+      "name": "car",
+      "selector": ".fi-car",
+      "point": "&#xf1cf"
+    },
+  
+    {
+      "name": "caret-down",
+      "selector": ".fi-caret-down",
+      "point": "&#xf1d0"
+    },
+  
+    {
+      "name": "caret-left",
+      "selector": ".fi-caret-left",
+      "point": "&#xf1d1"
+    },
+  
+    {
+      "name": "caret-right",
+      "selector": ".fi-caret-right",
+      "point": "&#xf1d2"
+    },
+  
+    {
+      "name": "caret-up",
+      "selector": ".fi-caret-up",
+      "point": "&#xf1d3"
+    },
+  
+    {
+      "name": "cart",
+      "selector": ".fi-cart",
+      "point": "&#xf1d4"
+    },
+  
+    {
+      "name": "chart-bar",
+      "selector": ".fi-chart-bar",
+      "point": "&#xf1d5"
+    },
+  
+    {
+      "name": "chart-line",
+      "selector": ".fi-chart-line",
+      "point": "&#xf1d6"
+    },
+  
+    {
+      "name": "chart-pie",
+      "selector": ".fi-chart-pie",
+      "point": "&#xf1d7"
+    },
+  
+    {
+      "name": "chat",
+      "selector": ".fi-chat",
+      "point": "&#xf1d8"
+    },
+  
+    {
+      "name": "check",
+      "selector": ".fi-check",
+      "point": "&#xf1d9"
+    },
+  
+    {
+      "name": "check-box",
+      "selector": ".fi-check-box",
+      "point": "&#xf1da"
+    },
+  
+    {
+      "name": "chevron-down",
+      "selector": ".fi-chevron-down",
+      "point": "&#xf1db"
+    },
+  
+    {
+      "name": "chevron-left",
+      "selector": ".fi-chevron-left",
+      "point": "&#xf1dc"
+    },
+  
+    {
+      "name": "chevron-right",
+      "selector": ".fi-chevron-right",
+      "point": "&#xf1dd"
+    },
+  
+    {
+      "name": "chevron-up",
+      "selector": ".fi-chevron-up",
+      "point": "&#xf1de"
+    },
+  
+    {
+      "name": "clipboard",
+      "selector": ".fi-clipboard",
+      "point": "&#xf1df"
+    },
+  
+    {
+      "name": "clock",
+      "selector": ".fi-clock",
+      "point": "&#xf1e0"
+    },
+  
+    {
+      "name": "cloud",
+      "selector": ".fi-cloud",
+      "point": "&#xf1e1"
+    },
+  
+    {
+      "name": "cloud-download",
+      "selector": ".fi-cloud-download",
+      "point": "&#xf1e2"
+    },
+  
+    {
+      "name": "cloud-upload",
+      "selector": ".fi-cloud-upload",
+      "point": "&#xf1e3"
+    },
+  
+    {
+      "name": "code",
+      "selector": ".fi-code",
+      "point": "&#xf1e4"
+    },
+  
+    {
+      "name": "cog",
+      "selector": ".fi-cog",
+      "point": "&#xf1e5"
+    },
+  
+    {
+      "name": "coin",
+      "selector": ".fi-coin",
+      "point": "&#xf1e6"
+    },
+  
+    {
+      "name": "compass",
+      "selector": ".fi-compass",
+      "point": "&#xf1e7"
+    },
+  
+    {
+      "name": "conversation",
+      "selector": ".fi-conversation",
+      "point": "&#xf1e8"
+    },
+  
+    {
+      "name": "copy",
+      "selector": ".fi-copy",
+      "point": "&#xf1e9"
+    },
+  
+    {
+      "name": "credit-card",
+      "selector": ".fi-credit-card",
+      "point": "&#xf1ea"
+    },
+  
+    {
+      "name": "crosshairs",
+      "selector": ".fi-crosshairs",
+      "point": "&#xf279"
+    },
+  
+    {
+      "name": "desktop",
+      "selector": ".fi-desktop",
+      "point": "&#xf1eb"
+    },
+  
+    {
+      "name": "document",
+      "selector": ".fi-document",
+      "point": "&#xf1ec"
+    },
+  
+    {
+      "name": "document-stack",
+      "selector": ".fi-document-stack",
+      "point": "&#xf1ed"
+    },
+  
+    {
+      "name": "envelope",
+      "selector": ".fi-envelope",
+      "point": "&#xf1ee"
+    },
+  
+    {
+      "name": "envelope-open",
+      "selector": ".fi-envelope-open",
+      "point": "&#xf1ef"
+    },
+  
+    {
+      "name": "external",
+      "selector": ".fi-external",
+      "point": "&#xf1f0"
+    },
+  
+    {
+      "name": "eye",
+      "selector": ".fi-eye",
+      "point": "&#xf1f1"
+    },
+  
+    {
+      "name": "eye-hide",
+      "selector": ".fi-eye-hide",
+      "point": "&#xf1f2"
+    },
+  
+    {
+      "name": "facebook",
+      "selector": ".fi-facebook",
+      "point": "&#xf1f3"
+    },
+  
+    {
+      "name": "feed",
+      "selector": ".fi-feed",
+      "point": "&#xf1f4"
+    },
+  
+    {
+      "name": "film",
+      "selector": ".fi-film",
+      "point": "&#xf1f5"
+    },
+  
+    {
+      "name": "fire",
+      "selector": ".fi-fire",
+      "point": "&#xf1f6"
+    },
+  
+    {
+      "name": "flag",
+      "selector": ".fi-flag",
+      "point": "&#xf1f7"
+    },
+  
+    {
+      "name": "flask",
+      "selector": ".fi-flask",
+      "point": "&#xf1f8"
+    },
+  
+    {
+      "name": "folder",
+      "selector": ".fi-folder",
+      "point": "&#xf1f9"
+    },
+  
+    {
+      "name": "folder-archive",
+      "selector": ".fi-folder-archive",
+      "point": "&#xf1fa"
+    },
+  
+    {
+      "name": "font",
+      "selector": ".fi-font",
+      "point": "&#xf1fb"
+    },
+  
+    {
+      "name": "frown",
+      "selector": ".fi-frown",
+      "point": "&#xf1fc"
+    },
+  
+    {
+      "name": "gauge",
+      "selector": ".fi-gauge",
+      "point": "&#xf1fd"
+    },
+  
+    {
+      "name": "github",
+      "selector": ".fi-github",
+      "point": "&#xf1fe"
+    },
+  
+    {
+      "name": "globe",
+      "selector": ".fi-globe",
+      "point": "&#xf1ff"
+    },
+  
+    {
+      "name": "globe-alt",
+      "selector": ".fi-globe-alt",
+      "point": "&#xf200"
+    },
+  
+    {
+      "name": "google",
+      "selector": ".fi-google",
+      "point": "&#xf201"
+    },
+  
+    {
+      "name": "grid-4",
+      "selector": ".fi-grid-4",
+      "point": "&#xf202"
+    },
+  
+    {
+      "name": "grid-9",
+      "selector": ".fi-grid-9",
+      "point": "&#xf203"
+    },
+  
+    {
+      "name": "heading",
+      "selector": ".fi-heading",
+      "point": "&#xf204"
+    },
+  
+    {
+      "name": "headphones",
+      "selector": ".fi-headphones",
+      "point": "&#xf274"
+    },
+  
+    {
+      "name": "heart",
+      "selector": ".fi-heart",
+      "point": "&#xf205"
+    },
+  
+    {
+      "name": "heart-filled",
+      "selector": ".fi-heart-filled",
+      "point": "&#xf206"
+    },
+  
+    {
+      "name": "help",
+      "selector": ".fi-help",
+      "point": "&#xf207"
+    },
+  
+    {
+      "name": "home",
+      "selector": ".fi-home",
+      "point": "&#xf208"
+    },
+  
+    {
+      "name": "image",
+      "selector": ".fi-image",
+      "point": "&#xf209"
+    },
+  
+    {
+      "name": "image-gallery",
+      "selector": ".fi-image-gallery",
+      "point": "&#xf20a"
+    },
+  
+    {
+      "name": "inbox",
+      "selector": ".fi-inbox",
+      "point": "&#xf20b"
+    },
+  
+    {
+      "name": "indent",
+      "selector": ".fi-indent",
+      "point": "&#xf20c"
+    },
+  
+    {
+      "name": "info-circle",
+      "selector": ".fi-info-circle",
+      "point": "&#xf20d"
+    },
+  
+    {
+      "name": "instagram",
+      "selector": ".fi-instagram",
+      "point": "&#xf20e"
+    },
+  
+    {
+      "name": "italic",
+      "selector": ".fi-italic",
+      "point": "&#xf20f"
+    },
+  
+    {
+      "name": "key",
+      "selector": ".fi-key",
+      "point": "&#xf210"
+    },
+  
+    {
+      "name": "keyboard",
+      "selector": ".fi-keyboard",
+      "point": "&#xf211"
+    },
+  
+    {
+      "name": "laptop",
+      "selector": ".fi-laptop",
+      "point": "&#xf212"
+    },
+  
+    {
+      "name": "lightning",
+      "selector": ".fi-lightning",
+      "point": "&#xf213"
+    },
+  
+    {
+      "name": "link",
+      "selector": ".fi-link",
+      "point": "&#xf214"
+    },
+  
+    {
+      "name": "link-broken",
+      "selector": ".fi-link-broken",
+      "point": "&#xf215"
+    },
+  
+    {
+      "name": "linkedin",
+      "selector": ".fi-linkedin",
+      "point": "&#xf216"
+    },
+  
+    {
+      "name": "list-ol",
+      "selector": ".fi-list-ol",
+      "point": "&#xf217"
+    },
+  
+    {
+      "name": "list-ul",
+      "selector": ".fi-list-ul",
+      "point": "&#xf218"
+    },
+  
+    {
+      "name": "location",
+      "selector": ".fi-location",
+      "point": "&#xf275"
+    },
+  
+    {
+      "name": "lock",
+      "selector": ".fi-lock",
+      "point": "&#xf219"
+    },
+  
+    {
+      "name": "lock-open",
+      "selector": ".fi-lock-open",
+      "point": "&#xf21a"
+    },
+  
+    {
+      "name": "logout",
+      "selector": ".fi-logout",
+      "point": "&#xf21b"
+    },
+  
+    {
+      "name": "map",
+      "selector": ".fi-map",
+      "point": "&#xf21c"
+    },
+  
+    {
+      "name": "marker",
+      "selector": ".fi-marker",
+      "point": "&#xf21d"
+    },
+  
+    {
+      "name": "megaphone",
+      "selector": ".fi-megaphone",
+      "point": "&#xf21e"
+    },
+  
+    {
+      "name": "menu",
+      "selector": ".fi-menu",
+      "point": "&#xf21f"
+    },
+  
+    {
+      "name": "minus",
+      "selector": ".fi-minus",
+      "point": "&#xf220"
+    },
+  
+    {
+      "name": "mobile",
+      "selector": ".fi-mobile",
+      "point": "&#xf221"
+    },
+  
+    {
+      "name": "mouse",
+      "selector": ".fi-mouse",
+      "point": "&#xf222"
+    },
+  
+    {
+      "name": "music",
+      "selector": ".fi-music",
+      "point": "&#xf276"
+    },
+  
+    {
+      "name": "network",
+      "selector": ".fi-network",
+      "point": "&#xf223"
+    },
+  
+    {
+      "name": "outdent",
+      "selector": ".fi-outdent",
+      "point": "&#xf224"
+    },
+  
+    {
+      "name": "paperclip",
+      "selector": ".fi-paperclip",
+      "point": "&#xf225"
+    },
+  
+    {
+      "name": "paste",
+      "selector": ".fi-paste",
+      "point": "&#xf226"
+    },
+  
+    {
+      "name": "pencil",
+      "selector": ".fi-pencil",
+      "point": "&#xf227"
+    },
+  
+    {
+      "name": "pencil-box",
+      "selector": ".fi-pencil-box",
+      "point": "&#xf228"
+    },
+  
+    {
+      "name": "phone",
+      "selector": ".fi-phone",
+      "point": "&#xf229"
+    },
+  
+    {
+      "name": "pin",
+      "selector": ".fi-pin",
+      "point": "&#xf22a"
+    },
+  
+    {
+      "name": "planet",
+      "selector": ".fi-planet",
+      "point": "&#xf22b"
+    },
+  
+    {
+      "name": "player-backward",
+      "selector": ".fi-player-backward",
+      "point": "&#xf22c"
+    },
+  
+    {
+      "name": "player-forward",
+      "selector": ".fi-player-forward",
+      "point": "&#xf22d"
+    },
+  
+    {
+      "name": "player-mute",
+      "selector": ".fi-player-mute",
+      "point": "&#xf22e"
+    },
+  
+    {
+      "name": "player-pause",
+      "selector": ".fi-player-pause",
+      "point": "&#xf22f"
+    },
+  
+    {
+      "name": "player-play",
+      "selector": ".fi-player-play",
+      "point": "&#xf230"
+    },
+  
+    {
+      "name": "player-skip-backward",
+      "selector": ".fi-player-skip-backward",
+      "point": "&#xf231"
+    },
+  
+    {
+      "name": "player-skip-forward",
+      "selector": ".fi-player-skip-forward",
+      "point": "&#xf232"
+    },
+  
+    {
+      "name": "player-stop",
+      "selector": ".fi-player-stop",
+      "point": "&#xf233"
+    },
+  
+    {
+      "name": "player-volume-down",
+      "selector": ".fi-player-volume-down",
+      "point": "&#xf234"
+    },
+  
+    {
+      "name": "player-volume-off",
+      "selector": ".fi-player-volume-off",
+      "point": "&#xf235"
+    },
+  
+    {
+      "name": "player-volume-up",
+      "selector": ".fi-player-volume-up",
+      "point": "&#xf236"
+    },
+  
+    {
+      "name": "plus",
+      "selector": ".fi-plus",
+      "point": "&#xf237"
+    },
+  
+    {
+      "name": "pointer",
+      "selector": ".fi-pointer",
+      "point": "&#xf238"
+    },
+  
+    {
+      "name": "printer",
+      "selector": ".fi-printer",
+      "point": "&#xf239"
+    },
+  
+    {
+      "name": "question-circle",
+      "selector": ".fi-question-circle",
+      "point": "&#xf23a"
+    },
+  
+    {
+      "name": "reddit",
+      "selector": ".fi-reddit",
+      "point": "&#xf23b"
+    },
+  
+    {
+      "name": "redo",
+      "selector": ".fi-redo",
+      "point": "&#xf23c"
+    },
+  
+    {
+      "name": "refresh",
+      "selector": ".fi-refresh",
+      "point": "&#xf23d"
+    },
+  
+    {
+      "name": "robot",
+      "selector": ".fi-robot",
+      "point": "&#xf23e"
+    },
+  
+    {
+      "name": "rocket",
+      "selector": ".fi-rocket",
+      "point": "&#xf23f"
+    },
+  
+    {
+      "name": "save",
+      "selector": ".fi-save",
+      "point": "&#xf240"
+    },
+  
+    {
+      "name": "scissors",
+      "selector": ".fi-scissors",
+      "point": "&#xf241"
+    },
+  
+    {
+      "name": "search",
+      "selector": ".fi-search",
+      "point": "&#xf242"
+    },
+  
+    {
+      "name": "server",
+      "selector": ".fi-server",
+      "point": "&#xf243"
+    },
+  
+    {
+      "name": "share",
+      "selector": ".fi-share",
+      "point": "&#xf244"
+    },
+  
+    {
+      "name": "shield",
+      "selector": ".fi-shield",
+      "point": "&#xf245"
+    },
+  
+    {
+      "name": "smile",
+      "selector": ".fi-smile",
+      "point": "&#xf246"
+    },
+  
+    {
+      "name": "star",
+      "selector": ".fi-star",
+      "point": "&#xf247"
+    },
+  
+    {
+      "name": "star-filled",
+      "selector": ".fi-star-filled",
+      "point": "&#xf248"
+    },
+  
+    {
+      "name": "strikethrough",
+      "selector": ".fi-strikethrough",
+      "point": "&#xf249"
+    },
+  
+    {
+      "name": "table",
+      "selector": ".fi-table",
+      "point": "&#xf24a"
+    },
+  
+    {
+      "name": "tablet",
+      "selector": ".fi-tablet",
+      "point": "&#xf24b"
+    },
+  
+    {
+      "name": "tag",
+      "selector": ".fi-tag",
+      "point": "&#xf24c"
+    },
+  
+    {
+      "name": "target",
+      "selector": ".fi-target",
+      "point": "&#xf27a"
+    },
+  
+    {
+      "name": "terminal",
+      "selector": ".fi-terminal",
+      "point": "&#xf24e"
+    },
+  
+    {
+      "name": "times",
+      "selector": ".fi-times",
+      "point": "&#xf24f"
+    },
+  
+    {
+      "name": "train",
+      "selector": ".fi-train",
+      "point": "&#xf250"
+    },
+  
+    {
+      "name": "trash",
+      "selector": ".fi-trash",
+      "point": "&#xf251"
+    },
+  
+    {
+      "name": "tumblr",
+      "selector": ".fi-tumblr",
+      "point": "&#xf252"
+    },
+  
+    {
+      "name": "twitter",
+      "selector": ".fi-twitter",
+      "point": "&#xf253"
+    },
+  
+    {
+      "name": "underline",
+      "selector": ".fi-underline",
+      "point": "&#xf254"
+    },
+  
+    {
+      "name": "undo",
+      "selector": ".fi-undo",
+      "point": "&#xf255"
+    },
+  
+    {
+      "name": "user",
+      "selector": ".fi-user",
+      "point": "&#xf256"
+    },
+  
+    {
+      "name": "users",
+      "selector": ".fi-users",
+      "point": "&#xf257"
+    },
+  
+    {
+      "name": "video",
+      "selector": ".fi-video",
+      "point": "&#xf258"
+    },
+  
+    {
+      "name": "water",
+      "selector": ".fi-water",
+      "point": "&#xf259"
+    },
+  
+    {
+      "name": "wifi",
+      "selector": ".fi-wifi",
+      "point": "&#xf25a"
+    },
+  
+    {
+      "name": "window",
+      "selector": ".fi-window",
+      "point": "&#xf25b"
+    },
+  
+    {
+      "name": "wrench",
+      "selector": ".fi-wrench",
+      "point": "&#xf25c"
+    },
+  
+    {
+      "name": "youtube",
+      "selector": ".fi-youtube",
+      "point": "&#xf25d"
+    }
+  
+  ]
+}

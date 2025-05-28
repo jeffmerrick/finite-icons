@@ -2,7 +2,7 @@ name: Middleman Build
 
 on:
   push:
-    branches: [gh-pages]
+    branches: [master]
 
 jobs:
   build_and_deploy:
@@ -13,5 +13,6 @@ jobs:
       - name: Build & Deploy to GitHub Pages
         with:
           REMOTE_BRANCH: gh-pages
+          SITE_LOCATION: site
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         uses: yurikoval/middleman-gh-pages-action@master
